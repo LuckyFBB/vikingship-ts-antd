@@ -2,6 +2,7 @@ import React from "react";
 import classnames from "classnames";
 export enum ButtonSize {
   Large = "lg",
+  Middle = "md",
   Small = "sm",
 }
 
@@ -21,11 +22,27 @@ interface BaseButtonProps {
   href?: string;
 }
 
-const Button: React.FC<BaseButtonProps> = (props) => {
-  const { btnType, size, disanled, className, children, href } = props;
+type NativeButtonProps = BaseButtonProps &
+  React.ButtonHTMLAttributes<HTMLElement>;
+
+type AnchorButtonProps = BaseButtonProps &
+  React.AnchorHTMLAttributes<HTMLElement>;
+
+export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>;
+
+const Button: React.FC<ButtonProps> = (props) => {
+  const {
+    btnType,
+    size,
+    disanled,
+    className,
+    children,
+    href,
+    ...restProps
+  } = props;
 
   //btn btn-lg -btn-primary
-  const classes = classnames("btn", {
+  const classes = classnames("btn", className, {
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
     disabled: btnType === ButtonType.Link && disanled,
@@ -33,13 +50,13 @@ const Button: React.FC<BaseButtonProps> = (props) => {
 
   if (btnType === ButtonType.Link && href) {
     return (
-      <a className={classes} href={href}>
+      <a className={classes} href={href} {...restProps}>
         {children}
       </a>
     );
   } else {
     return (
-      <button className={classes} disabled={disanled}>
+      <button className={classes} disabled={disanled} {...restProps}>
         {children}
       </button>
     );
@@ -49,6 +66,7 @@ const Button: React.FC<BaseButtonProps> = (props) => {
 Button.defaultProps = {
   disanled: false,
   btnType: ButtonType.Default,
+  size: ButtonSize.Middle,
 };
 
 export default Button;
