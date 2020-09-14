@@ -1,5 +1,6 @@
 import React from "react";
 import Button, { ButtonType, ButtonSize } from "./components/Button";
+import Alert, { AlertType } from "./components/Alert";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,9 @@ function App() {
         <Button btnType={ButtonType.Link} disanled href="http://baidu.com">
           Baidu Link
         </Button>
+        <br />
+        <br />
+        <Alert title="Alert" desc="Alert info" alertType={AlertType.Success} />
       </header>
     </div>
   );

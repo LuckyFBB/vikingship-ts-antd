@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-13 16:39:30
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-14 19:30:02
+ * @LastEditTime: 2020-09-14 21:31:08
  * @Description: 全局mixins
  */
 @mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
@@ -17,7 +17,7 @@
   $color,
   $hover-background: lighten($background, 7.5%),
   $hover-border: lighten($border, 10%),
-  $hover-color: $color,
+  $hover-color: $color
 ) {
   color: $color;
   background: $background;
@@ -25,18 +25,23 @@
   &:hover {
     color: $hover-color;
     background: $hover-background;
-    border-color: $hover-border;    
+    border-color: $hover-border;
   }
   &:focus,
   &.focus {
     color: $hover-color;
     background: $hover-background;
-    border-color: $hover-border;    
+    border-color: $hover-border;
   }
   &:disabled,
   &.disabled {
     color: $color;
     background: $background;
-    border-color: $border;    
+    border-color: $border;
   }
+}
+@mixin alert-style($background, $border, $color) {
+  color: $color;
+  background: $background;
+  border-color: $border;
 }
