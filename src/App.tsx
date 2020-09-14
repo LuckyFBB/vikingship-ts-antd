@@ -1,5 +1,5 @@
 import React from "react";
-import Button, { ButtonType, ButtonSize } from "./components/Buuton/button";
+import Button, { ButtonType, ButtonSize } from "./components/Button";
 function App() {
   return (
     <div className="App">
