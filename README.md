@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-10 21:34:53
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-13 17:17:59
+ * @LastEditTime: 2020-09-15 21:46:18
  * @Description:
 -->
 
@@ -28,6 +28,16 @@
 >Button</Button>
 ```
 
+##### Alert
+
+- 不同的 alert type
+- 标题和内容，解释更详细的警告
+- 配置关闭按钮
+
+```tsx
+<Alert title="" desc=""? alertType=""? cancolse={false}?/>
+```
+
 #### styles 样式
 
 ##### 样式解决方案
@@ -41,3 +51,7 @@
 
 1. 色彩体系
 2. 字体系统
+
+#### react 测试
+
+使用 React Testing Library
