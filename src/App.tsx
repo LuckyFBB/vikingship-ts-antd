@@ -1,6 +1,9 @@
 import React from "react";
 import Button, { ButtonType, ButtonSize } from "./components/Button";
 import Alert, { AlertType } from "./components/Alert";
+import Menu from "./components/Menu/Menu";
+import MenuItem from "./components/Menu/MenuItem";
+import SubMenu from "./components/Menu/SubMenu";
 function App() {
   return (
     <div className="App">
@@ -23,6 +26,17 @@ function App() {
         <br />
         <br />
         <Alert title="Alert" desc="Alert info" alertType={AlertType.Success} />
+        <br />
+        <Menu mode="vertical">
+          <MenuItem>Hei</MenuItem>
+          <MenuItem disabled>FBB</MenuItem>
+          <MenuItem>LuckyFBB</MenuItem>
+          <SubMenu title="dropdown">
+            <MenuItem>dropdown</MenuItem>
+            <MenuItem>dropdown1</MenuItem>
+          </SubMenu>
+          <MenuItem>Lucky</MenuItem>
+        </Menu>
       </header>
     </div>
   );

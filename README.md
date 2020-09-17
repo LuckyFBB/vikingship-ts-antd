@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-10 21:34:53
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-15 21:46:18
+ * @LastEditTime: 2020-09-17 21:00:09
  * @Description:
 -->
 
@@ -37,6 +37,17 @@
 ```tsx
 <Alert title="" desc=""? alertType=""? cancolse={false}?/>
 ```
+
+##### Menu
+
+- 横向
+  active/disabled/dropMenu
+- 纵向
+  active/disabled/dropMenu
+
+使用 context 来在组件间传递值
+使用 React.Children.map()遍历 props.children
+使用 React.cloneElement 克隆样板并返回新的 React 元素(用于添加 index)
 
 #### styles 样式
 
