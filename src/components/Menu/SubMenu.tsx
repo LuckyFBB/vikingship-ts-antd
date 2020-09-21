@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import classnames from "classnames";
 import { MenuContext } from "./Menu";
 import { MenuItemProps } from "./MenuItem";
@@ -17,10 +17,48 @@ const SubMenu: React.FC<SubMenuProps> = ({
   children,
 }) => {
   const context = useContext(MenuContext);
+  const openedSubMenus = context.defaultOpenSubMenus as Array<string>;
+  const isOpened =
+    index && context.mode === "vertical"
+      ? openedSubMenus.includes(index)
+      : false;
+  const [menuOpen, setMenuOpen] = useState(isOpened);
   const classes = classnames("menu-item submenu-item", className, {
     active: context.index === index,
   });
+
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMenuOpen(!menuOpen);
+  };
+  let timer: any;
+  const handleMouse = (e: React.MouseEvent, toggle: boolean) => {
+    clearTimeout(timer);
+    e.preventDefault();
+    timer = setTimeout(() => {
+      setMenuOpen(toggle);
+    }, 300);
+  };
+
+  const clickEvents =
+    context.mode === "vertical"
+      ? {
+          onClick: handleClick,
+        }
+      : {};
+
+  const hoverEvents =
+    context.mode !== "vertical"
+      ? {
+          onMouseEnter: (e: React.MouseEvent) => handleMouse(e, true),
+          onMouseLeave: (e: React.MouseEvent) => handleMouse(e, false),
+        }
+      : {};
+
   const renderChildren = () => {
+    const subMenuClasses = classnames("submenu", {
+      "menu-open": menuOpen,
+    });
     const childComponent = React.Children.map(children, (child, i) => {
       const childrenEle = child as React.FunctionComponentElement<
         MenuItemProps
@@ -32,12 +70,14 @@ const SubMenu: React.FC<SubMenuProps> = ({
         console.error("Warning: SubMenu has a child which is not a MenuItem");
       }
     });
-    return <ul className="submenu">{childComponent}</ul>;
+    return <ul className={subMenuClasses}>{childComponent}</ul>;
   };
 
   return (
-    <li className={classes} key={index}>
-      <div className="submenu-title">{title}</div>
+    <li className={classes} key={index} {...hoverEvents}>
+      <div className="submenu-title" {...clickEvents}>
+        {title}
+      </div>
       {renderChildren()}
     </li>
   );

@@ -12,17 +12,28 @@ interface MenuProps {
   onSelect?: SelectCallback;
   className?: string;
   children: React.ReactNode;
+  defaultOpenSubMenus?: string[];
 }
 
 interface IMuneContext {
   index: string;
+  mode?: MenuMode;
+  defaultOpenSubMenus?: string[];
   onSelect?: SelectCallback;
 }
 
 export const MenuContext = createContext<IMuneContext>({ index: "0" });
 
 const Menu: React.FC<MenuProps> = (props) => {
-  const { className, children, mode, defaultIndex, style, onSelect } = props;
+  const {
+    className,
+    children,
+    mode,
+    defaultIndex,
+    style,
+    defaultOpenSubMenus,
+    onSelect,
+  } = props;
   const [activeIndex, setActiveIndex] = useState(defaultIndex);
   const classes = classnames("menu", className, {
     "menu-vertical": mode === "vertical",
@@ -39,6 +50,8 @@ const Menu: React.FC<MenuProps> = (props) => {
 
   const passedContext: IMuneContext = {
     index: activeIndex ? activeIndex : "0",
+    mode,
+    defaultOpenSubMenus,
     onSelect: handleClick,
   };
 
@@ -68,6 +81,7 @@ const Menu: React.FC<MenuProps> = (props) => {
 Menu.defaultProps = {
   defaultIndex: "0",
   mode: "horizontal",
+  defaultOpenSubMenus: [],
 };
 
 export default Menu;

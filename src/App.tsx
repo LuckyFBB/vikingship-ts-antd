@@ -27,7 +27,7 @@ function App() {
         <br />
         <Alert title="Alert" desc="Alert info" alertType={AlertType.Success} />
         <br />
-        <Menu mode="vertical">
+        <Menu mode="vertical" defaultOpenSubMenus={["3"]}>
           <MenuItem>Hei</MenuItem>
           <MenuItem disabled>FBB</MenuItem>
           <MenuItem>LuckyFBB</MenuItem>
