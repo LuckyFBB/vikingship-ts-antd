@@ -41,7 +41,6 @@ const Menu: React.FC<MenuProps> = (props) => {
   });
 
   const handleClick: SelectCallback = (index: string) => {
-    console.log(index);
     setActiveIndex(index);
     if (onSelect) {
       onSelect(index);

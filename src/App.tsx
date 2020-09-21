@@ -4,6 +4,8 @@ import Alert, { AlertType } from "./components/Alert";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/Menu/MenuItem";
 import SubMenu from "./components/Menu/SubMenu";
+import Tabs from "./components/Tabs";
+import TabItem from "./components/Tabs/TabItem";
 function App() {
   return (
     <div className="App">
@@ -37,6 +39,15 @@ function App() {
           </SubMenu>
           <MenuItem>Lucky</MenuItem>
         </Menu>
+        <br />
+        <Tabs type="card" mode="vertical">
+          <TabItem label={<div>yohu</div>}>111111111</TabItem>
+          <TabItem label="card2" disabled>
+            222222222
+          </TabItem>
+          <TabItem label="card3">333333333</TabItem>
+          <TabItem label="card4">444444444</TabItem>
+        </Tabs>
       </header>
     </div>
   );

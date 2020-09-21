@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-10 21:34:53
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-17 21:00:09
+ * @LastEditTime: 2020-09-21 22:02:04
  * @Description:
 -->
 
@@ -48,6 +48,11 @@
 使用 context 来在组件间传递值
 使用 React.Children.map()遍历 props.children
 使用 React.cloneElement 克隆样板并返回新的 React 元素(用于添加 index)
+
+##### Tabs
+
+- mode("horizontal" | "vertical")
+- type("line" | "card") 注意：card 和 vertical 不能同时存在
 
 #### styles 样式
 
