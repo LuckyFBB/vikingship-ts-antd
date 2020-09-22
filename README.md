@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-10 21:34:53
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-21 22:02:04
+ * @LastEditTime: 2020-09-22 15:59:49
  * @Description:
 -->
 
@@ -53,6 +53,19 @@
 
 - mode("horizontal" | "vertical")
 - type("line" | "card") 注意：card 和 vertical 不能同时存在
+
+#### Icon 的解决方案
+
+1. 雪碧图
+2. fonticon
+3. svg
+
+基于[react-fontawesome](https://github.com/FortAwesome/react-fontawesome)二次封装
+
+#### 动画的解决方案
+
+1. CSS3 属性
+2. React Transition Group
 
 #### styles 样式
 

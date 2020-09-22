@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-13 16:39:18
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-21 20:41:52
+ * @LastEditTime: 2020-09-22 15:33:21
  * @Description: 各种变量以及可配置的设置
  */
 $white: #ffffff !default;
@@ -36,6 +36,17 @@ $warning: $yellow !default;
 $danger: $red !default;
 $light: $gray-100 !default;
 $dark: $gray-800 !default;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
 
 $font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",

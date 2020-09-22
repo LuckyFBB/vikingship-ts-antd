@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import classnames from "classnames";
+import Icon from "../Icon";
+import Transition from "../Transition";
 
 export enum AlertType {
   Success = "success",
@@ -38,19 +40,22 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
   };
 
   return (
-    <>
-      {!hide && (
-        <div className={classes}>
-          {canclose ? (
-            <div className="alert-close" onClick={handleClose}>
-              关闭
-            </div>
-          ) : null}
-          <span className={titleClass}>{title}</span>
-          {desc && <p className="alert-desc">{desc}</p>}
-        </div>
-      )}
-    </>
+    <Transition
+      in={!hide}
+      classNames="zoom-in-left"
+      timeout={300}
+      unmountOnExit
+    >
+      <div className={classes}>
+        {canclose ? (
+          <div className="alert-close" onClick={handleClose}>
+            <Icon icon="times" />
+          </div>
+        ) : null}
+        <span className={titleClass}>{title}</span>
+        {desc && <p className="alert-desc">{desc}</p>}
+      </div>
+    </Transition>
   );
 };
 
