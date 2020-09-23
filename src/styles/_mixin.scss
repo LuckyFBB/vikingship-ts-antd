@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-13 16:39:30
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-22 17:11:29
+ * @LastEditTime: 2020-09-23 17:47:46
  * @Description: 全局mixins
  */
 @mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
@@ -48,6 +48,18 @@
 
 @mixin border-top-radius($raduis) {
   border-top-left-radius: $raduis;
+  border-top-right-radius: $raduis;
+}
+@mixin border-top-radius($raduis) {
+  border-bottom-left-radius: $raduis;
+  border-bottom-right-radius: $raduis;
+}
+@mixin border-left-radius($raduis) {
+  border-top-left-radius: $raduis;
+  border-bottom-left-radius: $raduis;
+}
+@mixin border-right-radius($raduis) {
+  border-bottom-right-radius: $raduis;
   border-top-right-radius: $raduis;
 }
 

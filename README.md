@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-10 21:34:53
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-22 15:59:49
+ * @LastEditTime: 2020-09-23 15:59:31
  * @Description:
 -->
 
@@ -61,6 +61,14 @@
 3. svg
 
 基于[react-fontawesome](https://github.com/FortAwesome/react-fontawesome)二次封装
+
+#### Input
+
+- size
+- disabled
+- 带 Icon
+- 带前缀 or 后缀
+- 自动填充
 
 #### 动画的解决方案
 

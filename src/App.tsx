@@ -8,6 +8,7 @@ import MenuItem from "./components/Menu/MenuItem";
 import SubMenu from "./components/Menu/SubMenu";
 import Tabs from "./components/Tabs";
 import TabItem from "./components/Tabs/TabItem";
+import Input from "./components/Input";
 
 library.add(fas);
 function App() {
@@ -52,6 +53,12 @@ function App() {
           <TabItem label="card3">333333333</TabItem>
           <TabItem label="card4">444444444</TabItem>
         </Tabs>
+        <br />
+        <Input
+          type="text"
+          placeholder="icon input"
+          append=".com"
+        />
       </header>
     </div>
   );
