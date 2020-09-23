@@ -1,6 +1,7 @@
 import React from "react";
 
 export interface TabItemProps {
+  /** */
   label: string | React.ReactElement;
   disabled?: boolean;
 }

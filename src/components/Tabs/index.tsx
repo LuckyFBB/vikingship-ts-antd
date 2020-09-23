@@ -7,11 +7,15 @@ type TabsType = "line" | "card";
 type TabsMode = "horizontal" | "vertical";
 
 interface TabsProps {
+  /** tabs类型 */
   type?: TabsType;
+  /** tabs方向 */
   mode?: TabsMode;
   className?: string;
+  /** 当前激活的index，默认为0 */
   defaultIndex?: number;
   children?: React.ReactNode;
+  /**点击 Tab 触发的回调函数 */
   style?: React.CSSProperties;
   onSelect?: SelectCallback;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import Button from "./components/Button";
-import Alert, { AlertType } from "./components/Alert";
+import Alert from "./components/Alert";
 import Menu from "./components/Menu/Menu";
 import MenuItem from "./components/Menu/MenuItem";
 import SubMenu from "./components/Menu/SubMenu";
@@ -32,7 +32,7 @@ function App() {
         </Button>
         <br />
         <br />
-        <Alert title="Alert" desc="Alert info" alertType={AlertType.Success} />
+        <Alert title="Alert" desc="Alert info" type="success" />
         <br />
         <Menu defaultOpenSubMenus={["3"]}>
           <MenuItem>Hei</MenuItem>
@@ -54,11 +54,7 @@ function App() {
           <TabItem label="card4">444444444</TabItem>
         </Tabs>
         <br />
-        <Input
-          type="text"
-          placeholder="icon input"
-          append=".com"
-        />
+        <Input type="text" placeholder="icon input" append=".com" />
       </header>
     </div>
   );

@@ -3,18 +3,13 @@ import classnames from "classnames";
 import Icon from "../Icon";
 import Transition from "../Transition";
 
-export enum AlertType {
-  Success = "success",
-  Default = "default",
-  Danger = "danger",
-  Warning = "warning",
-}
+type AlertType = "success" | "default" | "danger" | "warning";
 
 interface BaseAlertProps {
-  canclose?: boolean;
+  closable?: boolean;
   desc?: string;
   title: string;
-  alertType?: AlertType;
+  type?: AlertType;
   className?: string;
   onClose?: () => void;
 }
@@ -22,10 +17,10 @@ interface BaseAlertProps {
 const Alert: React.FC<BaseAlertProps> = (props) => {
   const [hide, setHide] = useState(false);
 
-  const { canclose, desc, title, alertType, className, onClose } = props;
+  const { closable, desc, title, type, className, onClose } = props;
 
   const classes = classnames("alert", className, {
-    [`alert-${alertType}`]: alertType,
+    [`alert-${type}`]: type,
   });
 
   const titleClass = classnames("alert-title", {
@@ -47,7 +42,7 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
       unmountOnExit
     >
       <div className={classes}>
-        {canclose ? (
+        {closable ? (
           <div className="alert-close" onClick={handleClose}>
             <Icon icon="times" />
           </div>
@@ -60,8 +55,8 @@ const Alert: React.FC<BaseAlertProps> = (props) => {
 };
 
 Alert.defaultProps = {
-  canclose: true,
-  alertType: AlertType.Default,
+  closable: true,
+  type: "default",
 };
 
 export default Alert;
