@@ -36,7 +36,7 @@ const Input: React.FC<InputProps> = (props) => {
         <Icon icon={icon} title={`title-${icon}`} />
       </div>
     );
-  console.log(prepend, append);
+  
   return (
     <div className={classes} style={style}>
       {prepend && <div className="input-group-prepend">{prepend}</div>}

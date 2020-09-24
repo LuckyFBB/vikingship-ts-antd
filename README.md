@@ -2,7 +2,7 @@
  * @Author: FBB
  * @Date: 2020-09-10 21:34:53
  * @LastEditors: FBB
- * @LastEditTime: 2020-09-23 15:59:31
+ * @LastEditTime: 2020-09-24 18:19:58
  * @Description:
 -->
 
@@ -69,6 +69,13 @@
 - 带 Icon
 - 带前缀 or 后缀
 - 自动填充
+
+#### AutoComplete
+
+- 自定义子列表
+- 异步函数
+- 请求防抖
+- 键盘事件
 
 #### 动画的解决方案
 
