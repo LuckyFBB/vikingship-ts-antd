@@ -1,0 +1,121 @@
+.select {
+  position: relative;
+  .input-wrapper {
+    cursor: pointer;
+    &:hover {
+      input {
+        border-color: $primary;
+      }
+    }
+  }
+  input {
+    &[readonly] {
+      cursor: pointer;
+      // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
+      opacity: 1;
+      background-color: $input-bg;
+      border-color: $input-border-color;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 1;
+      background-color: $input-disabled-bg;
+      border-color: $input-disabled-border-color;
+    }
+  }
+  .icon-wrapper {
+    transition: transform 0.25s ease-in-out;
+    transform: rotate(0deg) !important;
+  }
+}
+
+.select-dropdown {
+  list-style: none;
+  padding-left: 0;
+  white-space: nowrap;
+  position: absolute;
+  background: $white;
+  z-index: 100;
+  top: calc(100% + 8px);
+  left: 0;
+  border: $menu-border-width solid $menu-border-color;
+  box-shadow: $submenu-box-shadow;
+  width: 100%;
+  .select-item {
+    padding: $menu-item-padding-y $menu-item-padding-x;
+    cursor: pointer;
+    transition: $menu-transition;
+    color: $body-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &.selected {
+      color: $black;
+      background-color: rgba($primary, 0.1);
+      font-weight: $font-weight-bold;
+    }
+    &.disabled {
+      color: $menu-item-disabled-color;
+      pointer-events: none;
+      cursor: default;
+    }
+    &:hover {
+      background-color: rgba($primary, 0.1);
+    }
+  }
+}
+
+.selected-tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0 $input-padding-y $input-padding-y;
+  font-family: $input-font-family;
+  font-size: $input-font-size;
+  font-weight: $input-font-weight;
+  color: $input-color;
+  background-color: $input-bg;
+  border: $input-border-width solid $input-border-color;
+  border-radius: $input-border-radius;
+  box-shadow: $input-box-shadow;
+  transition: $input-transition;
+  .tag {
+    height: 80%;
+    padding: 2px 5px;
+    box-sizing: border-box;
+    border: 1px solid rgba($primary, 0.2);
+    margin: $input-padding-y 6px 0 0;
+    border-radius: 3px;
+    color: $primary;
+    background-color: rgba($primary, 0.1);
+  }
+  .placeholder {
+    color: $input-placeholder-color;
+    line-height: 1.85rem;
+    padding-top: $input-padding-y;
+  }
+  .icon {
+    margin-left: 5px;
+    cursor: pointer;
+    &:hover {
+      color: darken($primary, 10%);
+    }
+  }
+  .tag-disabled {
+    background-color: $input-disabled-bg;
+    border: $input-border-width solid $input-disabled-border-color;
+    color: $select-disabled-color;
+    pointer-events: none;
+    cursor: not-allowed;
+    .icon {
+      cursor: not-allowed;
+    }
+  }
+  &-disabled {
+    cursor: not-allowed;
+    opacity: 1;
+    background-color: $input-disabled-bg;
+    border-color: $input-disabled-border-color;
+  }
+}
